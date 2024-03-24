@@ -9,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'maven clean install -DskipTests'
+                sh 'mvn clean install -DskipTests'
             }
         }
     }
