@@ -1,18 +1,11 @@
-deploymentConfig = ['DEVOPS':'qa']
-mavenGoalTest = 'clean package -DskipTests'
-buildContext = [
- [
-     mavenGoal: 'clean install -DjenkinsBuild -DskipTests',
-     deploy: false
- ],
- [
-     module: 'frequency-demo2',
-     region: 'us-west-2',
-     mavenGoal: 'clean verify -DjenkinsBuild -DskipTests',
-     deploy: true,
-     hostHeader: 'true',
-     attachALB: true,
-     attachSpecificTaskRole: true
- ]
-]
-standardMavenECSBuild(deploymentConfig: deploymentConfig,mavenGoalTest:mavenGoalTest, buildContext: buildContext)
+pipeline {
+
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sh 'mvn clean install -DskipTests'
+            }
+        }
+    }
+}
