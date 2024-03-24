@@ -1,7 +1,8 @@
 pipeline {
     agent {
-        node {
-            label 'Built-In'
+        docker {
+            image 'node'
+            args '-u root'
         }
     }
     stages {
