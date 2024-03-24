@@ -1,6 +1,3 @@
-if (env.BRANCH_NAME == 'master') { library "jenkins-lib" } 
-else { library "test-lib" }
-
 deploymentConfig = ['DEVOPS':'qa']
 mavenGoalTest = 'clean package -DskipTests'
 buildContext = [
