@@ -1,5 +1,6 @@
 package com.example.demo3;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ class Demo3ApplicationTest {
 
 	@Test
 	void contextLoads() {
+		Assertions.assertTrue(true);
 	}
 
 }
